@@ -36,9 +36,9 @@
     }
     
     NSURLRequest *request = [NSURLRequest requestWithURL:self.url
-                                             cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                             cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
                                          timeoutInterval:10.0];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration ephemeralSessionConfiguration]
                                                           delegate:self
                                                      delegateQueue:[NSOperationQueue mainQueue]];
     

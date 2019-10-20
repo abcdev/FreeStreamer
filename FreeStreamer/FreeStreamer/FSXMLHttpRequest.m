@@ -42,7 +42,7 @@
     _lastError = FSXMLHttpRequestError_NoError;
     
     NSURLRequest *request = [NSURLRequest requestWithURL:self.url
-                                             cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                             cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
                                          timeoutInterval:10.0];
     
     NSURLSession *session = [NSURLSession sharedSession];

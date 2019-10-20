@@ -36,11 +36,11 @@
     _contentType = @"";
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:_url
-                                                           cachePolicy:NSURLRequestReloadIgnoringCacheData
+                                                           cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
                                                        timeoutInterval:10.0];
     [request setHTTPMethod:@"HEAD"];
     
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration ephemeralSessionConfiguration]
                                                           delegate:self
                                                      delegateQueue:[NSOperationQueue mainQueue]];
     
